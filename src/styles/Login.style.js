@@ -6,8 +6,7 @@ export const Box = styled.div.attrs({
 })``;
 
 export const Label = styled.label.attrs({
-	className:
-		'flex gap-6 items-center justify-center text-2xl text-(--mainFt)'
+	className: 'flex gap-6 items-center justify-center text-2xl text-(--mainFt)'
 })`
 	input:not([type='checkbox']) {
 		width: 100%;
@@ -18,8 +17,8 @@ export const Label = styled.label.attrs({
 
 	&:has(input[type='checkbox']) {
 		font-size: 1.2rem;
-    cursor: pointer;
-    gap: 16px;
+		cursor: pointer;
+		gap: 16px;
 	}
 
 	input[type='checkbox'] {
@@ -36,5 +35,22 @@ export const Label = styled.label.attrs({
 
 	input::placeholder {
 		font-size: 1rem;
+	}
+`;
+
+export const Btn = styled.button.attrs({
+	className: 'w-full py-2 rounded-[16px] bg-(--main) text-2xl text-(--mainD)',
+	type: 'button'
+})`
+	&:hover {
+		opacity: 0.8;
+	}
+	&:disabled {
+		opacity: 0.5;
+		cursor: auto;
+	}
+	&:last-child {
+		background: transparent;
+		color: var(--main);
 	}
 `;
