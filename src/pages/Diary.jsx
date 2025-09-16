@@ -1,72 +1,47 @@
 import { useState } from 'react';
-import { Wrap } from '../styles/Comp.style';
-import { MonthBtn, WeekWrap, DateWrap } from '../styles/Diary.style';
 import Header from '../comps/Header';
-
-const week = ['일', '월', '화', '수', '목', '금', '토'];
-
-function WeekDay({ week, date, isToday, isSelected, onClick }) {
-	return (
-		<DateWrap
-			className={`${isToday ? 'today' : ''} 
-      ${isSelected ? 'select' : ''}`}
-			onClick={onClick}
-		>
-			<span>{week}</span>
-			<span>{date}</span>
-		</DateWrap>
-	);
-}
+import TabBar from '../comps/TabBar';
+import CalendarW from '../comps/CalendarW';
+import ImgUpload from '../comps/ImgUpload';
+import { Wrap } from '../styles/Comp.style';
+import { NewBtn, DiaryList, GameSelect } from '../styles/Diary.style';
 
 export default function Diary() {
-	const today = new Date();
-	const year = today.getFullYear();
-	const month = today.getMonth();
-
-	const todayDate = today.getDate();
-	const todayDay = today.getDay();
-
-	let startDate = new Date(year, month, todayDate - todayDay);
-
-	const startDateValue = todayDate - todayDay;
-
-	const weekDates = Array.from({ length: 7 }, (_, i) => {
-		const date = new Date(year, month, startDateValue + i);
-		return {
-			week: week[i],
-			date: date.getDate(),
-			month: date.getMonth(),
-			year: date.getFullYear()
-		};
-	});
-
-	// 오늘이 주간 배열 어디에 있는지 바로 findIndex로 찾기
-	const [select, setSelect] = useState(
-		weekDates.findIndex(
-			(d) => d.date === todayDate && d.month === month && d.year === year
-		)
-	);
+	const [newDiary, setNewDiary] = useState(false);
 
 	return (
 		<Wrap>
 			<Header title='일기장' />
 
-			<MonthBtn>{month + 1}월</MonthBtn>
+			<CalendarW />
 
-			<WeekWrap>
-				{weekDates.map((d, idx) => (
-          <WeekDay
-            key={idx}
-            week={d.week}
-            date={d.date}
-            isToday={
-              d.date === todayDate && d.month === month && d.year === year
-            }
-            isSelected={select === idx}
-            onClick={() => setSelect(idx)}
-          />
-        ))}
-			</WeekWrap>
+			{!newDiary && (
+				<NewBtn onClick={() => setNewDiary(true)}>새 일기 작성</NewBtn>
+			)}
+
+			{newDiary && (
+				<DiaryList>
+					<label>
+						게임 <GameSelect>선택</GameSelect>
+					</label>
+					<label>
+						제목{' '}
+						<input className='field' type='text' placeholder='입력해주세요.' />
+					</label>
+					<div className='field flex flex-col gap-4 p-4'>
+						<label>
+							<textarea
+								name=''
+								id=''
+								placeholder='내용을 입력해주세요.'
+							></textarea>
+						</label>
+						<ImgUpload />
+					</div>
+				</DiaryList>
+			)}
+
+			<TabBar />
 		</Wrap>
 	);
 }
