@@ -11,7 +11,6 @@ const Form = [
 export default function Login() {
 	const navigate = useNavigate();
 	const handleLogin = () => {
-		// Implement login logic here
 		navigate('/diary');
 	};
 

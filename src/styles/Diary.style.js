@@ -109,18 +109,43 @@ export const GameSelect = styled.button.attrs({
 `;
 
 export const ImgPreview = styled.div.attrs({
-	className: 'flex gap-4'
+	className: 'h-[5.4rem] flex gap-4 flex-1 overflow-auto pt-2'
 })`
 	scrollbar-gutter: stable;
-	width: 100%;
-	height: 5rem;
-	img {
+	&::-webkit-scrollbar {
+		height: 0.4rem;
+		background: transparent;
+	}
+	&::-webkit-scrollbar-thumb {
+		background: rgba(255, 255, 255, 0.2);
+		border-radius: 0.2rem;
+	}
+	div {
+		position: relative;
 		height: 4rem;
 		aspect-ratio: 4 / 3;
+	}
+	img {
+		height: 100%;
 		object-fit: cover;
 		border-radius: 12px;
 	}
-	overflow-x: auto;
+`;
+
+export const ImgClose = styled.button.attrs({
+	type: 'button'
+})`
+	position: absolute;
+	top: -0.4rem;
+	right: -0.4rem;
+	width: 1.2rem;
+	aspect-ratio: 1;
+	background: url(/close.svg) center / 13px no-repeat;
+	border-radius: 50%;
+	background-color: white;
+	&:hover {
+		opacity: 0.8;
+	}
 `;
 
 export const ImgSelect = styled.label.attrs({

@@ -62,7 +62,7 @@ export default function CalendarW() {
 				))}
 			</WeekWrap>
 
-      <TodayWrap>{year}년 {month + 1}월 {todayDate}일 {week[todayDay]}요일</TodayWrap>
+      <TodayWrap>{year}년 {weekDates[select].month + 1}월 {weekDates[select].date}일 {weekDates[select].week}요일</TodayWrap>
 		</>
 	);
 }

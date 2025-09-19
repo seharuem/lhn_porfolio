@@ -41,7 +41,7 @@ export default function Diary() {
 				</DiaryList>
 			)}
 
-			<TabBar />
+			<TabBar page={'diary'} />
 		</Wrap>
 	);
 }
