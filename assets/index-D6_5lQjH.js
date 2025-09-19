@@ -144,7 +144,7 @@ Please change the parent <Route path="${V}"> to <Route path="${V==="/"?"*":`${V}
 		content: '';
 		width: 1.2rem;
 		aspect-ratio: 1;
-		background: url(${$i}/calendar.svg) center / contain no-repeat;
+		background: url(${$i}calendar.svg) center / contain no-repeat;
 	}
 	&:hover {
 		opacity: 0.8;
@@ -178,7 +178,7 @@ Please change the parent <Route path="${V}"> to <Route path="${V==="/"?"*":`${V}
 		content: '';
 		width: 0.8rem;
 		aspect-ratio: 1;
-		background: url(${$i}/Plus.svg) center / contain no-repeat;
+		background: url(${$i}Plus.svg) center / contain no-repeat;
 	}
 
 	&:hover {
@@ -240,14 +240,14 @@ Please change the parent <Route path="${V}"> to <Route path="${V==="/"?"*":`${V}
 	right: -0.4rem;
 	width: 1.2rem;
 	aspect-ratio: 1;
-	background: url(${$i}/close.svg) center / 13px no-repeat;
+	background: url(${$i}close.svg) center / 13px no-repeat;
 	border-radius: 50%;
 	background-color: white;
 	&:hover {
 		opacity: 0.8;
 	}
 `,Og=jt.label.attrs({className:"size-6 cursor-pointer"})`
-	background: url(${$i}/image.svg) center / contain no-repeat;
+	background: url(${$i}image.svg) center / contain no-repeat;
 	&:hover {
 		opacity: 0.8;
 	}
