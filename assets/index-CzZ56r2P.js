@@ -139,7 +139,7 @@ Please change the parent <Route path="${V}"> to <Route path="${V==="/"?"*":`${V}
 	&.schedule::before {
 		background-image: url(/schedule_off.svg);
 	}
-`;function Zr({title:u}){return Q.jsxs(sg,{children:[Q.jsx(dg,{children:u}),Q.jsx(hg,{})]})}const vg=[{menu:"일기장",class:"diary"},{menu:"숙제",class:"quest"},{menu:"일정",class:"schedule"}];function pg({menu:u,className:c,isSelect:r,onClick:f}){return Q.jsx("li",{className:"h-full flex-1",children:Q.jsx(yg,{className:`${c} ${r?"on":""}`,onClick:f,children:u})})}function Kr({page:u}){const[c,r]=O.useState(u),f=Cr(),s=h=>{r(h),f(`/${h}`)};return Q.jsx(mg,{children:Q.jsx("ul",{className:"flex items-center",children:vg.map((h,g)=>Q.jsx(pg,{menu:h.menu,className:h.class,isSelect:c===h.class,onClick:()=>s(h.class)},g))})})}const $i=void 0,gg=jt.button.attrs({type:"button",className:"ml-6 w-max flex items-center justify-center gap-2 text-xl"})`
+`;function Zr({title:u}){return Q.jsxs(sg,{children:[Q.jsx(dg,{children:u}),Q.jsx(hg,{})]})}const vg=[{menu:"일기장",class:"diary"},{menu:"숙제",class:"quest"},{menu:"일정",class:"schedule"}];function pg({menu:u,className:c,isSelect:r,onClick:f}){return Q.jsx("li",{className:"h-full flex-1",children:Q.jsx(yg,{className:`${c} ${r?"on":""}`,onClick:f,children:u})})}function Kr({page:u}){const[c,r]=O.useState(u),f=Cr(),s=h=>{r(h),f(`/${h}`)};return Q.jsx(mg,{children:Q.jsx("ul",{className:"flex items-center",children:vg.map((h,g)=>Q.jsx(pg,{menu:h.menu,className:h.class,isSelect:c===h.class,onClick:()=>s(h.class)},g))})})}const $i="/game_diary/",gg=jt.button.attrs({type:"button",className:"ml-6 w-max flex items-center justify-center gap-2 text-xl"})`
 	&::before {
 		content: '';
 		width: 1.2rem;
